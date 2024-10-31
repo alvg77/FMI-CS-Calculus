@@ -1,0 +1,138 @@
+\documentclass[11pt,oneside,a4paper]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{mathtext}
+
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,bulgarian]{babel}
+\usepackage{setspace}
+\usepackage{enumitem}
+\setlength{\parindent}{0pt} % Remove paragraph indent
+\setlength{\parskip}{1.5ex} % Add extra space between paragraphs
+
+\begin{document}
+\title{Доказани твърдения на семинарните упражнения по ДИС 1}
+\date{}
+\maketitle
+
+\section*{Твърдения, доказани с индукция}
+
+\begin{enumerate}
+    \item \textbf{Неравенство  на Бернеум:}  
+    Ако \(n \in \mathbb{N} \), то \((1 + x)^n \geq 1 + n \cdot x\), \(x \in [-1; +\infty]\).
+    \item \textbf{Свойство:} 
+    \(b^m - c^m = (b - c)(b^{m-1} + b^{m-2}c + b^{m-3}c^2 + \dots + bc^{m-2} + c^{m-1})\)
+    \item \textbf{Тъждество на Безу:}  
+    Ако \(P(x)\) е полином от степен \(n\) и реалното число \(a \in \mathbb{R}\) е корен на полинома, то \(P(x) = (x-a)Q(x)\), където \(Q(x)\) е полином от степен \(n-1\).
+    \item \textbf{Свойство на полиномите:}  
+    Полином от степен \(n\) има \textbf{най-много} \(n\) различни нули.
+    \item \textbf{Еднаквост на полиноми:}  
+    Два полинома, които приемат общи стойности на коефициентите в \(n+1\) различни точки, имат равни коефициенти.
+\end{enumerate}
+
+\section*{Биномни коефициенти}
+
+\textbf{Биномен коефициент:}  
+Нека \(\alpha \in \mathbb{R}\). Числата \(\binom{\alpha}{0} = 1\) и \(\binom{\alpha}{k} = \frac{\alpha(\alpha - 1)\dots(\alpha - k - 1)}{k!}\) се наричат биномни коефициенти.
+
+\textbf{Основни свойства:} \vspace{-\baselineskip}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+    \item \(\binom{\alpha}{k} + \binom{\alpha}{k+1} = \binom{\alpha + 1}{k + 1}\).
+    \item Ако \(n \in \mathbb{N}\) и \(k \in \{1, 2, \dots, n\}\), то:
+    \begin{itemize}
+        \item \(\binom{n}{k} = \frac{n!}{k!(n-k)!}\)
+        \item \(\binom{n}{k} = \binom{n}{k-1}\)
+    \end{itemize}
+    \item Ако \(n, k \in \mathbb{N}\) и \(k > n\), то \(\binom{n}{k} = 0\).
+\end{enumerate}
+
+\textbf{Биномна формула на Нютон: }\vspace{-\baselineskip}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+    \item \((1 + x)^n = \binom{n}{0} + \binom{n}{1}x + \binom{n}{2}x^2 + \dots + \binom{n}{n}x^n\)
+    \item \((a + b)^n = \binom{n}{0}a^n + \binom{n}{1}a^{n-1}b + \binom{n}{2}a^{n-2}b^2 + \dots + \binom{n}{n-2}a^2b^{n-2} + \binom{n}{n-1}ab^{n-1} \binom{n}{n}b^n \)
+\end{enumerate}
+
+\textbf{Други твърдение за биномни коефициенти: }\vspace{-\baselineskip}
+\begin{enumerate}[label=\textbf{(\alph*)}]
+    \item \(\binom{n}{0} + \binom{n}{1} + \binom{n}{2} + \dots + \binom{n}{n} = 2^n\)
+    \item \(\binom{n}{0}^2 + \binom{n}{1}^2 + \binom{n}{2}^2 + \dots + \binom{n}{n}^2 = \binom{2n}{n}\)
+    \item \(\binom{n}{0} + \binom{n}{2} + \binom{n}{4} + \dots = \binom{n}{1} + \binom{n}{3} + \binom{n}{5} + \dots \)
+\end{enumerate}
+
+\section*{Твърдения свързани с ограниченост на множества:}
+
+\begin{enumerate}
+    \item Нека \(M \subset \mathbb{R}\), \(N \subset \mathbb{R}\) са непразни. Ако \(M \subseteq N\) и \(N\) (по-голямото множество) е ограничено отгоре, то => \(\sup M \leq \sup N\)
+    \item Нека \(M \subset \mathbb{R}\), \(N \subset \mathbb{R}\) са непразни, ограничени отгоре множества от положителни реални числа. Тогава \(M.N\) (\(\{m.n | m \in M, n \in N\}\)) също е ограничено отгоре и \(\sup (M.N) = \sup M + \sup N\)
+    \item Нека \(M \subset \mathbb{R}\), \(N \subset \mathbb{R}\) са непразни, ограничени отгоре множества от реални числа. \(M + N\) (\(\{m + n | m \in M, n \in N\}\)) също е ограничено отгоре и \(\sup (M + N) = \sup M + \sup N\) 
+\end{enumerate}
+
+\section*{Твърдения свързани с граници и сходимост на редици:}
+
+\begin{enumerate}
+    \item Ако \(\displaystyle \lim_{n \to \infty} a_n = a\) и \(\displaystyle \lim_{n \to \infty} b_n = b\)
+    \begin{itemize}
+        \item \(\displaystyle \lim_{n \to \infty} (a_n + b_n) = a + b\)
+        \item \(\displaystyle \lim_{n \to \infty} (a_n - b_n) = a - b\)
+        \item \(\displaystyle \lim_{n \to \infty} (a_n . b_n) = a.b\)
+        \item \(\displaystyle \lim_{n \to \infty} (\frac{a_n}{b_n}) = \frac{a}{b}, b \neq 0\)
+    \end{itemize}
+    \item \textbf{Теорема за двамата полицаи: } Ако \(a_n \leq c_n \leq b_n, \forall n \in \mathbb{N}\) и \(\{a_n\}^\infty_{n=1}\) и \(\{b_n\}^\infty_{n=1}\) са сходящи и клонят към \(l\), то \(\{c_n\}^{\infty}_{n=1}\) също е сходяща и \(\displaystyle \lim_{n \to \infty} c_n = l\)
+    \item Ако \(k \in \mathbb{N}\), то;
+    \begin{itemize}
+        \item \(\displaystyle \lim_{n \to \infty} (\frac{1}{n^k}) = 0\)
+        \item \(\displaystyle \lim_{n \to \infty} (\frac{1}{\sqrt[k]{n}}) = 0\)
+        \item Ако \(q \in (-1, 1)\), то \(\displaystyle \lim_{n \to \infty} q^n = 0\)
+    \end{itemize}
+    \item Ако \(\displaystyle \lim_{n \to \infty} a_n = 0\) и \(\{b_n\}^{\infty}_{n=1}\) е ограничена, то \(\displaystyle \lim_{n \to \infty} (a_n . b_n) = 0\)
+    \item Ако \(\displaystyle \lim_{n \to \infty} a_n = +\infty\) и \(\displaystyle \lim_{n \to \infty} b_n = l\), то \(\displaystyle \lim_{n \to \infty} a_n.b_n = \begin{cases} +\infty, l > 0 \\ -\infty, l < 0\end{cases}\)
+    \item Ако \(a_n \geq 0, \forall n \in \mathbb{N}\) и \(\displaystyle \lim_{n \to \infty} a_n = l\), то \(\displaystyle \lim_{n \to \infty} \sqrt[k]{a_n} = \sqrt[k]{l}\), \(k \in \mathbb{N}\)
+    \item Ако \(a \in \mathbb{R}\) е фиксирано число, то \(\displaystyle \lim_{n \to \infty} \frac{a^n}{n!} = 0\)
+    \item Ако \(a > 1\) е фиксирано число, то \(\displaystyle \lim_{n \to \infty} \frac{n^k}{a^n} = 0\), \(k \in \mathbb{N}\)
+    \item Акo \(q \in (-1, 1)\) е фиксирано числом то \(\displaystyle \lim_{n \to \infty} n^kq^n = 0\), \(k \in \mathbb{N}\)
+    \item Ако \(a > 0\) е фиксирано число, то \(\displaystyle \lim_{n \to \infty} \sqrt[n]{a} = 1\)
+    \item \(\displaystyle \lim_{n \to \infty} \sqrt[n]{n} = 1\)
+    \item Ако \(\displaystyle \lim_{n \to \infty} a_n = a > 0\), то \(\displaystyle \lim_{n \to \infty} \sqrt[n]{a_n} = 1\)
+    \item Редицата \(an = (1 + \frac{1}{n})^n\) е ограничена и монотонна, следователно е и сходяща. Тя клони към неперовото число - \(e\). \(\displaystyle \lim_{n \to \infty} (1 + \frac{1}{n})^n = e\). Тук важат следните твърдения:
+    \begin{itemize}
+        \item \(\displaystyle \lim_{n \to \infty} (1 + \frac{k}{n})^n = e^k\) 
+        \item \(\displaystyle \lim_{n \to \infty} (1 - \frac{k}{n})^n = e^{-k}\) 
+        \item \(\displaystyle \lim_{n \to \infty} (1 + \frac{1}{kn})^n = e^{\frac{1}{k}}\)
+        \item \(\displaystyle \lim_{n \to \infty} (1 - \frac{1}{kn})^n = e^{-\frac{1}{k}}\)
+    \end{itemize}
+\end{enumerate}
+
+\section*{Твърдения свързани с числови редове:}
+
+\begin{enumerate}
+    \item Хармоничният ред \textbf{НЕ} е сходящ
+    \item Ако \(\displaystyle \sum_{n=1}^{\infty} a_n\) е сходящ. то \(\displaystyle \lim_{n \to \infty} a_n = 0\). \textbf{Забележка: } Обратното не е вярно - ако редица клони към нула, не е задължително редът ѝ да е сходящ. Пример: хармоничният ред.
+    \item \textbf{Принцип за мажориране: } Ако \(0 \leq a_n \leq b_n \) за \(\forall n \in \mathbb{N}\) и \(\displaystyle \sum_{n=1}^{\infty} b_n\) е сходящ, то и \(\displaystyle \sum_{n=1}^{\infty} a_n\) също е сходящ.
+    \item \textbf{Критерий за сравняване: } Ако \(a_n > 0\), \(b_n > 0\) за \(\forall n \in \mathbb{N}\) и \(\exists K = \displaystyle \lim_{n \to \infty} \frac{a_n}{b_n}\), като \(0 < K < \infty\), то \(\displaystyle \sum_{n=1}^{\infty} а_n\) и \(\displaystyle \sum_{n=1}^{\infty} b_n\) са или едновременно сходящи, или разходящи. Казваме, че са сравними и пишем:
+    \(\displaystyle \sum_{n=1}^{\infty} a_n \text{\textbf{\texttildelow}} \sum_{n=1}^{\infty} b_n \)
+    \item Основни числови редове, които се използват за сравняване: 
+    \begin{itemize}
+        \item \(\displaystyle \sum_{n=0}^{\infty} q^n\), който е \(\begin{cases} \text{сходящ, ако } q \in (-1, 1) \\ \text{разходящ, ако } q \in (-\infty, -1] \cup [1, +\infty)\end{cases}\) (геометрична прогресия)
+        \item \(\displaystyle \sum_{n=0}^{\infty} \frac{1}{n^{\alpha}}\), който е \(\begin{cases} \text{сходящ, ако } \alpha > 1 \\ \text{разходящ, ако } \alpha \leq 1\end{cases}\) (обощен хармоничен ред)
+    \end{itemize}
+    \item \textbf{Критерий на Коши за редове с неотрицателни членове: } ако \(a_n \geq 0\) за \(\forall n \in \mathbb{N}\) и \(a_n \geq a_{n+1}\) за \(\forall n \in \mathbb{N}\), то числовите редове \(\displaystyle \sum_{n=1}^{\infty} a_n\) и \(\displaystyle \sum_{n=1}^{\infty} 2^na_{2^n}\) са сравними.
+    \item \textbf{Критерий на Даламбер: } Нека \(\displaystyle \sum_{n=1}^{\infty} a_n\) е числов ред с положителни членове, за който \(\exists\) границита \(D = \displaystyle \lim_{n \to \infty} \frac{a_{n+1}}{a_n}\) (крайна или безкрайна). Тогава: 
+    \begin{itemize}
+        \item Ако \(D < 1\), то редът е сходящ.
+        \item Aкo \(D > 1\), то редът е разходящ.
+        \item Ако \(D = 1\) и \(\displaystyle \lim_{n \to \infty} \frac{a_{n+1}}{a_n}\) = 1 отдясно (стойностите на редицата са по-големи от 1), то редът е разходящ.
+    \end{itemize}
+    \item \textbf{Критерий на Коши: } Нека \(\displaystyle \sum_{n=1}^{\infty} a_n\) е числов ред с положителни членове, за който \(\exists\) границита \(C = \displaystyle \lim_{n \to \infty} \sqrt[n]{a_n}\) (крайна или безкрайна). Тогава: 
+    \begin{itemize}
+        \item Ако \(C < 1\), то редът е сходящ.
+        \item Aкo \(C > 1\), то редът е разходящ.
+        \item Ако \(C = 1\) и \(\displaystyle \lim_{n \to \infty} \sqrt[n]{a_n}\) = 1 отдясно (стойностите на редицата са по-големи от 1), то редът е разходящ.
+    \end{itemize}
+\end{enumerate}
+
+
+\end{document}
